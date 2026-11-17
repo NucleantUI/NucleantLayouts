@@ -23,8 +23,10 @@ struct Sidebar {
                     .padding(.top, 16)
                     .padding(.bottom, 10)
                 ForEach(LayoutKind.allCases) { kind in
+                    // The stage animates the change itself; the inspector
+                    // and this list simply show the new layout.
                     SidebarRow(kind: kind, isSelected: gallery.kind == kind) {
-                        withAnimation(.spring(duration: 0.7, bounce: 0.15)) { gallery.show(kind) }
+                        gallery.show(kind)
                     }
                 }
             }
@@ -53,7 +55,7 @@ struct SidebarRow {
         .padding(.vertical, 5)
         .background(
             RoundedRectangle(cornerRadius: 7)
-                .fill(isSelected ? .color(Theme.accent.opacity(0.18)) : (isHovered ? .fill : .color(.clear)))
+                .fill(isSelected ? AnyShapeStyle(Theme.accent.opacity(0.18)) : isHovered ? AnyShapeStyle(.fill) : AnyShapeStyle(.clear))
         )
         .padding(.horizontal, 8)
         .onHover { isHovered = $0 }
