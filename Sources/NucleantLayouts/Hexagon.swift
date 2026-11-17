@@ -20,8 +20,6 @@ public struct Hexagon: Shape {
     /// A regular pointy-top hexagon is 2/√3 as tall as it is wide.
     public static let heightPerWidth = 2 / 3.0.squareRoot()
 
-    public init() {}
-
     public func path(in rect: Rect) -> Path {
         var path = Path()
         let quarter = rect.height / 4

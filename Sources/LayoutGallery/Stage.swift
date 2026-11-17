@@ -37,6 +37,9 @@ struct Stage {
             .padding(40)
             .frame(maxWidth: .infinity)
         }
+        // Another layout chosen: the tiles travel into it. Only here — the
+        // inspector beside it changes to the new layout's parameters at once.
+        .animation(.spring(duration: 0.7, bounce: 0.15), value: gallery.kind)
     }
 }
 

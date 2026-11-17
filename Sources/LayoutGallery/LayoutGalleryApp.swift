@@ -11,9 +11,9 @@ import NucleantLayouts
 import NucleantUI
 
 enum Theme {
-    static let sidebar = ShapeStyle.dynamic(light: Color(hex: 0xEFEDE8), dark: Color(hex: 0x17181C))
-    static let stage = ShapeStyle.dynamic(light: Color(hex: 0xF7F6F2), dark: Color(hex: 0x111215))
-    static let panel = ShapeStyle.dynamic(light: Color(hex: 0xF8F7F4), dark: Color(hex: 0x1C1D22))
+    static let sidebar = DynamicShapeStyle.dynamic(light: Color(hex: 0xEFEDE8), dark: Color(hex: 0x17181C))
+    static let stage = DynamicShapeStyle.dynamic(light: Color(hex: 0xF7F6F2), dark: Color(hex: 0x111215))
+    static let panel = DynamicShapeStyle.dynamic(light: Color(hex: 0xF8F7F4), dark: Color(hex: 0x1C1D22))
     static let accent = Color(hex: 0xE0663D)
     static let glyph = Color(hex: 0x8A8D96)
 }
